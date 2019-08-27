@@ -1,0 +1,29 @@
+
+CC       := gcc
+COMMON_FLAGS := -Wall -Wno-unused-label -g -D_GNU_SOURCE -D__USE_XOPEN2K 
+
+CFLAGS   := -std=gnu11 $(COMMON_FLAGS)
+
+CXX      := g++
+CXXFLAGS := -std=c++11 $(COMMON_FLAGS)
+
+DIR      := $(CURDIR)
+
+LD       := g++
+LFLAGS   := -g
+LIBS     := -lpthread -lc
+
+INCLUDES = 
+
+.c.o:
+	$(CC) $(CFLAGS) $(INCLUDES) -c $<  -o $@
+
+.cpp.o:
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $<  -o $@
+
+.S.o:
+	$(CC) $(CXXFLAGS) $(INCLUDES) -c $<  -o $@
+
+.s.o:
+	$(CC) $(CXXFLAGS) $(INCLUDES) -c $<  -o $@
+
